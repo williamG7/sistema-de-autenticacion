@@ -12,14 +12,14 @@ const User = Schema('User',{
 })
 
 // exportamos en una clase para crear usuarios y hacer el leogin 
-export class userRepository{
+export class UserRepository{
     static async create({username, password }){
         //Validació opcional usar zod(biblioteca de validaciones)
         // se hara de hacer mas estricto
         Validation.username(username)
         Validation.password(password)
 
-        const user = user.findOne([username])
+        const user = User.findOne([username])
         if (user) throw new Error('username ya existe')
 
        const id = crypto.randomUUID
@@ -37,15 +37,15 @@ export class userRepository{
         Validation.username(username)
         Validation.password(password)
 
-        const user = user.findOne({username})
+        const user = User.findOne({username})
 
         if(!user) throw new Error('username no existe')
 
-        const isValid = await bcrypt.compare(password,user.password)
+        const isValid = await bcrypt.compare(password,User.password)
 
         if(!isValid) throw new Error('password es invalido')
 
-        const {password:_,...publicUser} = user
+        const {password:_,...publicUser} = User
 
         return publicUser
     }
