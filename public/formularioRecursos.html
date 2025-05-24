@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Recurso</title>
+    <link rel="stylesheet" type="text/css" href="/public/formularios.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Editar Recurso: <%= recurso.nombre %></h1>
+    </header>
+
+    <main>
+        <section>
+            <form id="forma-recursos" class="forma-comun">
+                <input type="hidden" id="recurso-id">
+
+                <label for="recurso-nombre">Nombre:</label>
+                <input type="text" id="recurso-nombre" required>
+
+                <label for="recurso-categoria">Categoría:</label>
+                <input type="text" id="recurso-categoria" required>
+
+                <label for="recurso-estado">Estado:</label>
+                <input type="text" id="recurso-estado" required>
+
+                <button type="submit">Guardar</button>
+            </form>
+
+            <div class="boton-volver">
+                <a href="/recursos">Volver a la lista de recursos</a>
+            </div>
+
+        </section>
+    </main>
+</body>
+
+</html>

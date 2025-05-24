@@ -1,0 +1,33 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>usuarios</title>
+    <link rel="stylesheet" href="/public/style.css">
+ </head>
+ <body>
+    <header>
+        <h1>Gestion de usuarios por <%= user.nombre %>! </h1>
+        <h2><%- htmlMessage%> </h2>
+    </header>
+    <main>
+        <section>
+            <h2>lista de usuarios</h2>
+            <ul class="usuarios-lista">
+                <% data.usuarios.forEach(usuario => {
+                    %> 
+                    <li class="usuarios-item">
+                        <strong><%=usuario.nombre%></strong>
+                        <span>email: <%=usuario.email%></span>
+                        <span>rol: <%=usuario.rol%></span>
+                        <span><a href="/views/usuarios.ejs/<%=usuario.id%>">detalle del usuario</a></span>
+                        <span><a href="/views/formularioUsuarios.html" class="editar-link">Editar usuario</a></span>
+                    </li>
+                })
+            </ul>
+        </section>
+    </main>
+    
+ </body>
+ </html>

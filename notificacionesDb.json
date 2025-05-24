@@ -1,0 +1,39 @@
+{
+    "notificaciones": [
+        {
+            "id": 1,
+            "nombre": "notificacion1",
+            "usuarioId": 2,
+            "mensaje": "Tu reserva fue confirmada.",
+            "leida": false
+        },
+        {
+            "id": 2,
+            "nombre": "notificacion2",
+            "usuarioId": 3,
+            "mensaje": "El recurso reservado no estará disponible.",
+            "leida": true
+        },
+        {
+            "id": 3,
+            "nombre": "notificacion3",
+            "usuarioId": 4,
+            "mensaje": "Recuerda tu reserva de mañana.",
+            "leida": false
+        },
+        {
+            "id": 4,
+            "nombre": "notificacion4",
+            "usuarioId": 1,
+            "mensaje": "Nueva reserva asignada.",
+            "leida": true
+        },
+        {
+            "id": 5,
+            "nombre": "notificacion5",
+            "usuarioId": 5,
+            "mensaje": "Tu reserva ha sido cancelada.",
+            "leida": false
+        }
+    ]
+}

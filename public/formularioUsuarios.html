@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+    <link rel="stylesheet" type="text/css" href="/public/formularios.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Editar Usuario: <%= usuario.nombre %></h1>
+    </header>
+
+    <main>
+        <section>
+            <form id="forma-usuarios" class="forma-comun">
+                <input type="hidden" id="usuario-id">
+
+                <label for="usuario-nombre">Nombre:</label>
+                <input type="text" id="usuario-nombre" required>
+
+                <label for="usuario-apellido">Apellido/s:</label>
+                <input type="text" id="usuario-apellido" required>
+
+                <label for="usuario-email">Email:</label>
+                <input type="email" id="usuario-email" required>
+
+                <label for="usuario-tipo">Tipo:</label>
+                <input type="text" id="usuario-tipo" required>
+
+                <button type="submit">Guardar</button>
+            </form>
+            <div class="boton-volver">
+                <a href="/usuarios">Volver a la lista de usuarios</a>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Notificación</title>
+    <link rel="stylesheet" type="text/css" href="/public/formularios.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Editar Notificacion: <%= notificacion.nombre %></h1>
+    </header>
+
+    <main>
+        <section>
+            <form id="forma-notificaciones" class="forma-comun">
+                <input type="hidden" id="notificacion-id">
+
+                <label for="notificacion-mensaje">Mensaje:</label>
+                <input type="text" id="notificacion-mensaje" required>
+
+                <label for="notificacion-estado">Estado:</label>
+                <input type="text" id="notificacion-estado" required>
+
+                <button type="submit">Guardar</button>
+            </form>
+
+            <div class="boton-volver">
+                <a href="/notificaciones">Volver a la lista de notificaciones</a>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

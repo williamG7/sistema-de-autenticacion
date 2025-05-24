@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detalle del usuarios</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Gestion de usuarios por <%= user.nombre %>!</h1>
+        <h2><%- htmlMessage%></h2>
+    </header>
+    <main>
+        <section>
+            <h2>lista de usuarios</h2>
+            <ul class="usuarios">
+                <li class="usuarios-item">
+                    <span>email: <%=usuario.email%></span>
+                    <span>rol: <%=usuario.rol%></span>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>

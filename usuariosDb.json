@@ -1,0 +1,34 @@
+{
+    "usuarios":[
+        {
+            "id": 1,
+            "nombre": "Ana",
+            "email": "ana@email.com",
+            "rol": "admin"
+        },
+        {
+            "id": 2,
+            "nombre": "Luis",
+            "email": "luis@email.com",
+            "rol": "usuario"
+        },
+        {
+            "id": 3,
+            "nombre": "Sofía",
+            "email": "sofia@email.com",
+            "rol": "usuario"
+        },
+        {
+            "id": 4,
+            "nombre": "Carlos",
+            "email": "carlos@email.com",
+            "rol": "usuario"
+        },
+        {
+            "id": 5,
+            "nombre": "Elena",
+            "email": "elena@email.com",
+            "rol": "admin"
+        }
+    ]
+}

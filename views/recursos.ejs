@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recursos</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+    <header>
+        <h1> Gestion de recursos por <%= user.nombre %>!</h1>
+        <h2><%- htmlMessage %></h2>
+        <a href="/views/home.ejs" class="botton">volver al home</a>
+    </header>
+    <main>
+        <section>
+            <h2> Lista de recursos</h2>
+            <ul class="recurso-lista">
+                <% data.recursos.forEach(recurso => { %> 
+                <li class="recurso-item">
+                    <strong><%=recurso.nombre%></strong>
+                    <span>fechaInicio: <%= recurso.fechaInicio %></span>
+                    <span>fechaFin: <%= recurso.fechaFin %></span>
+                    <span>estado: <%= recurso.estado %></span>
+                    <span><a href="/views/recursos/<%=recurso.id%>">detalle del recurso</a></span>
+                    <span><a href="/views/formularioRecursos.html" class="editar-link">Editar recurso</a></span>
+                </li>
+            <%}) %>
+            </ul>
+        </section>
+    </main>
+</body>
+</html> 

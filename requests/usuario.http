@@ -1,0 +1,32 @@
+GET http://localhost:3000/usuarios 
+
+###
+
+GET http://localhost:3000/usuarios/2
+
+###
+
+POST http://localhost:3000/usuarios HTTP/1.1
+Content-Type: application/json
+
+{
+    "id" : 666,
+   "nombre": "LuisAngel",
+    "email": "luisadmin@email.com",
+    "rol": "admin"
+
+}
+
+###
+PUT http://localhost:3000/usuarios/3 HTTP/1.1
+Content-Type: application/json
+
+{
+  "nombre" : "Jesus",
+  "email" : "TodoLoPuedoEnCristoQueMeFortalece@haven.com"
+  "rol": "superadmin"
+    
+}
+###
+DELETE http://localhost:3000/usuaris/666 HTTP/1.1
+

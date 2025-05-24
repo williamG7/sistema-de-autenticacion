@@ -1,0 +1,31 @@
+GET http://localhost:3000/reservas 
+
+###
+
+GET http://localhost:3000/reservas/2
+
+###
+
+POST http://localhost:3000/reserves HTTP/1.1 
+Content-Type: application/json
+
+{
+    "id" : 888,
+   "nombre": "reserva88",
+    "usuarioId": 5,
+    "recursoId": 2,
+    "fecha": "2025-04-25T10:00:00"
+}
+            
+
+###
+PUT http://localhost:3000/reserves/3 HTTP/1.1
+Content-Type: application/json
+
+{
+   "recursoId": 12,
+   "fecha": "2025-30-25T11:00:00"
+}
+###
+DELETE http://localhost:3000/reserves/888 HTTP/1.1
+

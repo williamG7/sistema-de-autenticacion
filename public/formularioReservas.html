@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Reserva</title>
+    <link rel="stylesheet" type="text/css" href="/public/formularios.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Editar Reserva: <%= reserva.nombre %></h1>
+    </header>
+
+    <main>
+        <section>
+            <form id="forma-reservas" class="forma-comun">
+                <input type="hidden" id="reserva-id">
+
+                <label for="reserva-nombre">Nombre:</label>
+                <input type="text" id="reserva-nombre" required>
+
+                <label for="reserva-fecha">Fecha:</label>
+                <input type="text" id="reserva-fecha" required>
+
+                <label for="reserva-estado">Estado:</label>
+                <input type="text" id="reserva-estado" required>
+
+                <button type="submit">Guardar</button>
+            </form>
+
+            <div class="boton-volver">
+                <a href="/reservas">Volver a la lista de reservas</a>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

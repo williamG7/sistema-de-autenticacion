@@ -1,0 +1,31 @@
+GET http://localhost:3000/recursos 
+
+###
+
+GET http://localhost:3000/recursos/5
+
+###
+
+POST http://localhost:3000/recursos HTTP/1.1
+Content-Type: application/json
+
+{
+    "id" : 77,
+    "nombre": "recurso707",
+    "fechaInicio": "11:25",
+    "fechaFin": "14:59",
+    "estado": "activo"
+           
+}
+
+###
+PUT http://localhost:3000/recursos/33 HTTP/1.1
+Content-Type: application/json
+
+{
+  "id" : 77,
+  "estado": "inactivo"
+}
+###
+DELETE http://localhost:3000/recursos/77 HTTP/1.1
+

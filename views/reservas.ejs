@@ -1,0 +1,33 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reservas</title>
+    <link rel="stylesheet" href="/public/style.css">
+ </head>
+ <body>
+    <header>
+        <h1> Gestion de reservas por <%= user.nombre %>!</h1>
+        <h2><%- htmlMessage %></h2>
+    </header>
+    <main>
+        <section>
+            <h2> Lista de reservas</h2>
+            <ul class="reserva-lista">
+                <% data.reservas.forEach(reserva => { %>
+                <li class="reserva-item">
+                    <strong><%=reserva.nombre%></strong>
+                    <span>usarioId: <%= reserva.usarioId %></span>
+                    <span>recursoId: <%= reserva.recursoId %></span>
+                    <span>fecha: <%= reserva.fecha %></span>
+                    <span><a href="/views/reservas.ejs/<%=reserva.id%>">detalle de la reserva</a></span>
+                    <span><a href="/views/formularioReservas.html" class="editar-link">Editar reserva</a></span>
+                </li>
+            <%}) %>
+            </ul>
+        </section>
+    </main>
+    
+ </body>
+ </html>
