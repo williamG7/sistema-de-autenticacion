@@ -11,13 +11,16 @@
 <body>
     <header>
         <h1>Gestion de usuarios por <%= user.nombre %>!</h1>
-        <h2><%- htmlMessage%></h2>
+        <h2><a href="/usuarios">Volver a la lista de usuarios</a></h2>
     </header>
     <main>
         <section>
             <h2>lista de usuarios</h2>
-            <ul class="usuarios">
-                <li class="usuarios-item">
+            <ul class="lista">
+                <li class="item">
+                     <strong>
+                        <%= usuario.nombre %> 
+                    </strong>
                     <span>email: <%=usuario.email%></span>
                     <span>rol: <%=usuario.rol%></span>
                 </li>

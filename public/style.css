@@ -7,35 +7,68 @@ body {
     padding: 0;
 }
 
-h1 {
+/* Estilo para el header */
+header {
+    background-color: #6a4c9c; /* Fondo morado suave */
+    color: white;
+    padding: 20px;
     text-align: center;
-    color: #333;
-    margin-top: 50px;
 }
 
-ul {
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+/* Estilo para el main */
+main {
+    padding: 20px;
+}
+
+/* Estilo para la sección de la lista */
+section {
+    background-color: #ffffff; /* Fondo blanco para la sección */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #6a4c9c; /* Morado oscuro para los subtítulos */
+    margin-bottom: 20px;
+}
+
+/* Estilo para la lista de productos */
+.lista {
     list-style-type: none;
     padding: 0;
-    max-width: 400px;
-    margin: 50px auto;
-}
+} 
 
-li {
-    margin: 20px 0;
-    text-align: center;
-}
-
-a {
-    display: block;
-    padding: 15px 20px;
-    background-color: #3498db;
-    color: white;
-    text-decoration: none;
+.item {
+    background-color: #f3e5f5; /* Fondo suave de morado claro */
+    border: 1px solid #d1c4e9; /* Borde suave morado */
+    padding: 15px;
+    margin: 10px 0;
     border-radius: 8px;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-a:hover {
-    background-color: #2980b9;
+.item strong {
+    color: #6a4c9c; /* Morado oscuro para el nombre del recurso */
+    font-size: 1.2em;
+}
+
+.item span {
+    display: block;
+    margin-top: 5px;
+    color: #9c4d97; /* Morado medio para los detalles */
+    font-size: 1em;
+}
+
+/* Efecto hover para los elementos de la lista */
+.item:hover {
+    background-color: #e1bee7; /* Fondo morado claro al pasar el ratón */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }

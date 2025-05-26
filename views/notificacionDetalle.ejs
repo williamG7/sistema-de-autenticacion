@@ -13,11 +13,14 @@
     <main>
         <section>
             <h2>detalle notificacion</h2>
-            <ul class="notificacion-item">
-                <li class="notificacion-item">
+            <ul class="lista">
+                <li class="item">
+                    <strong>
+                        <%= notification.nombre %>
+                    </strong>
                     <span>usuarioId: <%=notificacion.usuarioId%></span>
                     <span>mensaje: <%=notificacion.mensaje%></span>
-                    <span>mensaje leido: <%=notificacion.leida5></span>
+                    <span>mensaje leido: <%=notificacion.leida></span>
                 </li>
             </ul>
         </section>

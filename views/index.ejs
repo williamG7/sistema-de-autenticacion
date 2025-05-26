@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login and Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #4a2c6f;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 420px;
+            width: 100%;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #6a4c9c;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.95em;
+            margin-bottom: 5px;
+            text-align: left;
+            color: #4a2c6f;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #d1c4e9;
+            border-radius: 6px;
+            font-size: 0.95em;
+            background-color: #f3e5f5;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #6a4c9c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #5a3b85;
+        }
+
+        #close-session {
+            background-color: #dc3545;
+        }
+
+        #close-session:hover {
+            background-color: #a71d2a;
+        }
+
+        span {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #9c4d97;
+        }
+
+        span.success {
+            color: green;
+        }
+
+        span.error {
+            color: red;
+        }
+
+        .form-container {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .form-container h2 {
+                font-size: 1.4em;
+                margin-bottom: 10px;
+            }
+
+            input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <% if (typeof username!='undefined' ) { %>
+            <div class="form-container">
+                <h2>Hola <%=username%>!</h2>
+                <p>Estás en el panel de admin</p>
+                <button id="close-session">Cerrar sesión</button>
+            </div>
+            <% } %>
+
+                <% if (typeof username==='undefined' ) { %>
+                    <div class="form-container">
+                        <form id="login-form">
+                            <h2>Login</h2>
+                            <label for="login-username">Username:</label>
+                            <input type="text" id="login-username" name="username" required>
+
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" name="password" required>
+
+                            <button type="submit">Login</button>
+                            <span>&nbsp;</span>
+                        </form>
+                    </div>
+
+                    <div class="form-container">
+                        <form id="register-form">
+                            <h2>Register</h2>
+                            <label for="register-username">Username:</label>
+                            <input type="text" id="register-username" name="username" required>
+
+                            <label for="register-password">Password</label>
+                            <input type="password" id="register-password" name="password" required>
+
+                            <label for="register-confirm-password">Confirm Password</label>
+                            <input type="password" id="register-confirm-password" name="confirm-password" required>
+
+                            <button type="submit">Register</button>
+                            <span>&nbsp;</span>
+                        </form>
+                    </div>
+                    <% } %>
+    </div>
+
+    <script>
+        const $ = el => document.querySelector(el);
+        const loginForm = $('#login-form')
+        const loginSpan = $('#login-form span')
+
+        const registerForm = $('#register-form')
+        const registerSpan = $('#register-form span')
+
+        const logoutButton = $('#close-session')
+
+        loginForm?.addEventListener('submit', e => {
+            e.preventDefault()
+            const username = $('#login-username').value
+            const password = $('#login-password').value
+
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            })
+                .then(res => {
+                    if (res.ok) {
+                        loginSpan.innerText = 'Sesión iniciada... Entrando...'
+                        loginSpan.className = 'success'
+                        setTimeout(() => {
+                            window.location.href = '/protected'
+                        }, 2000)
+                    } else {
+                        loginSpan.innerText = 'Error al iniciar sesión'
+                        loginSpan.className = 'error'
+                    }
+                })
+        });
+
+        registerForm?.addEventListener('submit', e => {
+            e.preventDefault()
+            const username = $('#register-username').value
+            const password = $('#register-password').value
+            const confirmPassword = $('#register-confirm-password').value
+
+            if (password != confirmPassword) {
+                alert('Las contraseñas no coinciden')
+                return
+            }
+
+            fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            })
+                .then(res => {
+                    if (res.ok) {
+                        registerSpan.innerText = 'Usuario registrado... Entrando...'
+                        registerSpan.className = 'success'
+                        setTimeout(() => {
+                            window.location.href = '/home'
+                        }, 2000)
+                    } else {
+                        registerSpan.innerText = 'Error al registrar usuario'
+                        registerSpan.className = 'error'
+                    }
+                })
+        });
+
+        logoutButton?.addEventListener('click', e => {
+            e.preventDefault()
+            fetch('/logout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(() => {
+                    window.location.href = '/'
+                })
+        });
+    </script>
+</body>
+
+</html>

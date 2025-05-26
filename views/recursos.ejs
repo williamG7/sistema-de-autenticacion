@@ -15,15 +15,17 @@
     <main>
         <section>
             <h2> Lista de recursos</h2>
-            <ul class="recurso-lista">
+            <ul class="lista">
                 <% data.recursos.forEach(recurso => { %> 
-                <li class="recurso-item">
-                    <strong><%=recurso.nombre%></strong>
+                <li class="item">
+                    <strong>
+                        <%=recurso.nombre%>
+                    </strong>
                     <span>fechaInicio: <%= recurso.fechaInicio %></span>
                     <span>fechaFin: <%= recurso.fechaFin %></span>
                     <span>estado: <%= recurso.estado %></span>
-                    <span><a href="/views/recursos/<%=recurso.id%>">detalle del recurso</a></span>
-                    <span><a href="/views/formularioRecursos.html" class="editar-link">Editar recurso</a></span>
+                    <span><a href="/views/recursos/<%=recurso.id%>" class="btn-formulario">detalle del recurso</a></span>
+                    <span><a href="/views/formularioRecursos.html" class="btn-formulario">Editar recurso</a></span>
                 </li>
             <%}) %>
             </ul>

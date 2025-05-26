@@ -14,15 +14,17 @@
     <main>
         <section>
             <h2> Lista de reservas</h2>
-            <ul class="reserva-lista">
+            <ul class="lista">
                 <% data.reservas.forEach(reserva => { %>
-                <li class="reserva-item">
-                    <strong><%=reserva.nombre%></strong>
+                <li class="item">
+                    <strong>
+                        <%=reserva.nombre%>
+                    </strong>
                     <span>usarioId: <%= reserva.usarioId %></span>
                     <span>recursoId: <%= reserva.recursoId %></span>
                     <span>fecha: <%= reserva.fecha %></span>
-                    <span><a href="/views/reservas.ejs/<%=reserva.id%>">detalle de la reserva</a></span>
-                    <span><a href="/views/formularioReservas.html" class="editar-link">Editar reserva</a></span>
+                    <span><a href="/views/reservas.ejs/<%=reserva.id%>"  class="btn-formulario">detalle de la reserva</a></span>
+                    <span><a href="/views/formularioReservas.html" class="btn-formulario">Editar reserva</a></span>
                 </li>
             <%}) %>
             </ul>

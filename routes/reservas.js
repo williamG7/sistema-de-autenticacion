@@ -20,15 +20,15 @@ const writeData = (data) => {
     }
 };
 
-routes.get('/reservas',(req, res) =>{
+routes.get('/',(req, res) =>{
     const user = {name: "william g"}
-    const htmlMessage = "lista de reservas"
+    const htmlMessage = `<a href="http://localhost:3000/">Home</a>`;
     const data = readData()
     res.render("reservas",{user, htmlMessage, data})
 });
 
 
-routes.get('/reservas/:id',(req, res) =>{
+routes.get('/:id',(req, res) =>{
     const data = readData()
     const user = {name: "william G"}
     const id = parseInt(req.params.id);

@@ -20,20 +20,25 @@ const writeData = (data) => {
     }
 };
 
-routes.get('/notificaciones',(req, res) =>{
+routes.get('/',(req, res) =>{
     const user = {name: "william g"}
-    const htmlMessage = "lista de notificaciones"
+    const htmlMessage = `<a href="http://localhost:3000/">Home</a>`;
     const data = readData()
-    res.render("recursos",{user, htmlMessage, data})
+    res.render("notificaciones",{user, htmlMessage, data})
 });
 
 
-routes.get('/notificaciones/:id',(req, res) =>{
+routes.get('/:id',(req, res) =>{
     const data = readData()
     const user = {name: "william G"}
     const id = parseInt(req.params.id);
-    const recurso = data.recursos.find((recurso) => recurso.id === id)
-    routes.render("notificacionesDetalle",{user, recurso})
+    const notificacion = data.notificaciones.find((notificacion) => notificacion.id === id)
+
+     if (!notificacion) {
+        return res.status(404).send("Notificacion no encontrada");
+    }
+
+    res.render("notificacionesDetalle", { user, notificacion });
 });
 
 

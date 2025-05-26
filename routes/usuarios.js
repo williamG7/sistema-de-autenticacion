@@ -20,20 +20,25 @@ const writeData = (data) => {
     }
 };
 
-routes.get('/usuarios',(req, res) =>{
+routes.get('/',(req, res) =>{
     const user = {nombre: "william g"}
-    const htmlMessage = "lista de usuarios"
+    const htmlMessage =  `<a href="http://localhost:3000/">Home</a>`;
     const data = readData()
     res.render("usuarios",{user, htmlMessage, data})
 });
 
 
-routes.get('/usuarios/:id',(req, res) =>{
+routes.get('/:id',(req, res) =>{
     const data = readData()
     const user = {nombre: "william G"}
     const id = parseInt(req.params.id);
-    const recurso = data.recursos.find((recurso) => recurso.id === id)
-    routes.render("usuariosDetalle",{user, recurso})
+    const usuario = data.recursos.find((usuario) => usuario.id === id)
+
+    if (!usuario) {
+        return res.status(404).send("Usuario no encontrado");
+    }
+
+    res.render("usuariosDetalle", { user, usuario });
 });
 
 

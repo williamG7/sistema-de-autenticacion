@@ -14,17 +14,18 @@
     <main>
         <section>
             <h2>lista de usuarios</h2>
-            <ul class="usuarios-lista">
-                <% data.usuarios.forEach(usuario => {
-                    %> 
-                    <li class="usuarios-item">
-                        <strong><%=usuario.nombre%></strong>
+            <ul class="lista">
+                <% data.usuarios.forEach(usuario => { %> 
+                    <li class="item">
+                        <strong>
+                            <%=usuario.nombre%>
+                        </strong>
                         <span>email: <%=usuario.email%></span>
                         <span>rol: <%=usuario.rol%></span>
-                        <span><a href="/views/usuarios.ejs/<%=usuario.id%>">detalle del usuario</a></span>
-                        <span><a href="/views/formularioUsuarios.html" class="editar-link">Editar usuario</a></span>
+                        <span><a href="/views/usuarios.ejs/<%=usuario.id%>"  class="btn-formulario">detalle del usuario</a></span>
+                        <span><a href="/views/formularioUsuarios.html" class=btn-formulario">Editar usuario</a></span>
                     </li>
-                })
+                 <% }) %>
             </ul>
         </section>
     </main>
