@@ -19,17 +19,23 @@
             <form id="forma-notificaciones" class="forma-comun">
                 <input type="hidden" id="notificacion-id">
 
-                <label for="notificacion-mensaje">Mensaje:</label>
-                <input type="text" id="notificacion-mensaje" required>
+                <label for="notificacion-nombre">Nombre:</label>
+                <input type="text" id="notificacion-nombre" name="nombre"
 
-                <label for="notificacion-estado">Estado:</label>
-                <input type="text" id="notificacion-estado" required>
+                <label for="notificacion-usuarioId">Usuario ID:</label>
+                <input type="number" id="notificacion-usuarioId" name="usuarioId"
+                
+                <label for="notificacion-mensaje">Mensaje:</label>
+                <input type="text" id="notificacion-mensaje" name="mensaje"
+                
+                <label for="notificacion-leida">leida:</label>
+                <input type="text" id="notificacion-leida" required>
 
                 <button type="submit">Guardar</button>
             </form>
 
             <div class="boton-volver">
-             <h2><a href="/notificaciones">Volver a la lista de notificaciones</a></h2>
+                <h2><a href="/notificaciones">Volver a la lista de notificaciones</a></h2>
             </div>
         </section>
     </main>

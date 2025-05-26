@@ -13,7 +13,7 @@
             "usuarioId": 3,
             "mensaje": "El recurso reservado no estará disponible.",
             "leida": true
-        },
+        }, 
         {
             "id": 3,
             "nombre": "notificacion 3",

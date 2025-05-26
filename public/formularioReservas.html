@@ -17,16 +17,19 @@
     <main>
         <section>
             <form id="forma-reservas" class="forma-comun">
-                <input type="hidden" id="reserva-id">
+                <input type="hidden" id="reserva-id"> 
 
                 <label for="reserva-nombre">Nombre:</label>
                 <input type="text" id="reserva-nombre" required>
 
+                <label for="reserva-usuarioId">usuario ID:</label>
+                <input type="text" id="reserva-usuarioId" required>
+
+                <label for="reserva-recursoId">recurso ID:</label>
+                <input type="text" id="reserva-recursoId" required>
+
                 <label for="reserva-fecha">Fecha:</label>
                 <input type="text" id="reserva-fecha" required>
-
-                <label for="reserva-estado">Estado:</label>
-                <input type="text" id="reserva-estado" required>
 
                 <button type="submit">Guardar</button>
             </form>

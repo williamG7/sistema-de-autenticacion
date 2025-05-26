@@ -4,7 +4,7 @@
             "id": 1,
             "nombre": "recurso 1",
             "fechaInicio": "10:25",
-            "fechaFin": "12:59",
+            "fechaFin": "12:59", 
             "estado": "activo"
         },
         {
