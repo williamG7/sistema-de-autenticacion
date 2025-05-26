@@ -7,8 +7,6 @@ import notificacionesRoutes from './routes/notificaciones.js'
 import reservasRoutes from './routes/reservas.js'
 import usuariosRoutes from './routes/usuarios.js'
 
-import methodOverride from 'method-override'
-
 import { SECRET_JWT_KEY } from "./config.js";
 import { UserRepository } from "./userRepository.js"
 
@@ -16,9 +14,6 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static("public")); // carpeta para el css
-app.use(express.urlencoded({ extended: true }))
-app.use(methodOverride('_method'))
-app.use(express.static('views'));
 
 app.set('view engine', 'ejs');// motor ejs
 app.set('views', './views'); // archivos ejs
