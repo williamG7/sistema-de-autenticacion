@@ -16,12 +16,12 @@ const writeData = (data) => {
     try {
         fs.writeFileSync("./usuariosDb.json", JSON.stringify(data));
     } catch (error) {
-        console.error(error);
+        console.error(error); 
     }
 };
 
 routes.get('/',(req, res) =>{
-    const user = {nombre: "william g"}
+    const user = {nombre: "william G"}
     const htmlMessage =  `<a href="http://localhost:3000/">Home</a>`;
     const data = readData()
     res.render("usuarios",{user, htmlMessage, data})
@@ -32,14 +32,13 @@ routes.get('/:id',(req, res) =>{
     const data = readData()
     const user = {nombre: "william G"}
     const id = parseInt(req.params.id);
-    const usuario = data.recursos.find((usuario) => usuario.id === id)
+    const usuario = data.usuarios.find((usuario) => usuario.id === id)
 
     if (!usuario) {
         return res.status(404).send("Usuario no encontrado");
     }
 
-    res.render("usuariosDetalle", { user, usuario });
+    res.render("usuarioDetalle", { user, usuario });
 });
-
 
 export default routes;

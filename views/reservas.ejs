@@ -8,7 +8,7 @@
  </head>
  <body>
     <header>
-        <h1> Gestion de reservas por <%= user.nombre %>!</h1>
+           <h1> Gestion de reservas por <%= user.nombre %>!</h1>
         <h2><%- htmlMessage %></h2>
     </header>
     <main>
@@ -23,8 +23,8 @@
                     <span>usarioId: <%= reserva.usarioId %></span>
                     <span>recursoId: <%= reserva.recursoId %></span>
                     <span>fecha: <%= reserva.fecha %></span>
-                    <span><a href="/views/reservas.ejs/<%=reserva.id%>"  class="btn-formulario">detalle de la reserva</a></span>
-                    <span><a href="/views/formularioReservas.html" class="btn-formulario">Editar reserva</a></span>
+                    <span><a href="/reservas.ejs/<%=reserva.id%>"  class="btn-formulario">detalle de la reserva</a>
+                    <a href="formularioReservas.html" class="btn-formulario">Editar reserva</a></span>
                 </li>
             <%}) %>
             </ul>

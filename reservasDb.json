@@ -2,36 +2,36 @@
      "reservas": [
         {
             "id": 1,
-            "nombre" : "reserva1",
-            "usuarioId": 2,
+            "nombre" : "reserva 1",
+            "usuarioId": 11,
             "recursoId": 1,
             "fecha": "2025-04-25T10:00:00"
         },
         {
             "id": 2,
-            "nombre" : "reserva2",
-            "usuarioId": 3,
+            "nombre" : "reserva 2",
+            "usuarioId": 22,
             "recursoId": 2,
             "fecha": "2025-04-26T15:30:00"
         },
         {
             "id": 3,
-            "nombre" : "reserva3",
-            "usuarioId": 4,
+            "nombre" : "reserva 3",
+            "usuarioId": 33,
             "recursoId": 3,
             "fecha": "2025-04-27T09:00:00"
         },
         {
             "id": 4,
-            "nombre" : "reserva4",
-            "usuarioId": 1,
+            "nombre" : "reserva 4",
+            "usuarioId": 44,
             "recursoId": 4,
             "fecha": "2025-04-28T13:00:00"
         },
         {
             "id": 5,
-            "nombre" : "reserva5",
-            "usuarioId": 5,
+            "nombre" : "reserva 5",
+            "usuarioId": 55,
             "recursoId": 5,
             "fecha": "2025-04-29T16:00:00"
         }

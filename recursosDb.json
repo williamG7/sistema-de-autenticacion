@@ -2,35 +2,35 @@
     "recursos": [
         {
             "id": 1,
-            "nombre": "recurso1",
+            "nombre": "recurso 1",
             "fechaInicio": "10:25",
             "fechaFin": "12:59",
             "estado": "activo"
         },
         {
             "id": 2,
-            "nombre": "recurso2",
+            "nombre": "recurso 2",
             "fechaInicio": "9:20",
             "fechaFin": "12:30",
             "estado": "activo"
         },
         {
             "id": 3,
-            "nombre": "recurso3",
+            "nombre": "recurso 3",
             "fechaInicio": "5:45",
             "fechaFin": "1:39",
             "estado": "inactivo"
         },
         {
             "id": 4,
-            "nombre": "recurso4",
+            "nombre": "recurso 4",
             "fechaInicio": "1:00",
             "fechaFin": "4:49",
             "estado": "activo"
         },
         {
             "id": 5,
-            "nombre": "recurso5",
+            "nombre": "recurso 5",
             "fechaInicio": "3:50",
             "fechaFin": "6:59",
             "estado": "inactivo"

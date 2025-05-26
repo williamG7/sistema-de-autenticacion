@@ -72,3 +72,18 @@ h2 {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
+.btn-formulario {
+    display: inline-block;
+    margin: 15px 0;
+    padding: 10px 20px;
+    background-color: #6a4c9c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-formulario:hover {
+    background-color: #5a3b85;
+}

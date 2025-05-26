@@ -21,7 +21,7 @@ const writeData = (data) => {
 };
 
 routes.get('/',(req, res) =>{
-    const user = {name: "william g"}
+    const user = {nombre: "william G"}
     const htmlMessage = `<a href="http://localhost:3000/">Home</a>`;
     const data = readData()
     res.render("notificaciones",{user, htmlMessage, data})
@@ -30,7 +30,7 @@ routes.get('/',(req, res) =>{
 
 routes.get('/:id',(req, res) =>{
     const data = readData()
-    const user = {name: "william G"}
+    const user = {nombre: "william G"}
     const id = parseInt(req.params.id);
     const notificacion = data.notificaciones.find((notificacion) => notificacion.id === id)
 
@@ -38,7 +38,7 @@ routes.get('/:id',(req, res) =>{
         return res.status(404).send("Notificacion no encontrada");
     }
 
-    res.render("notificacionesDetalle", { user, notificacion });
+    res.render("notificacionDetalle", { user, notificacion });
 });
 
 

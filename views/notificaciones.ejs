@@ -10,8 +10,7 @@
 
 <body>
     <header>
-        <h1>Gestion de notificaciones por <%= user.nombre %>
-        </h1>
+        <h1> Gestion de notificaciones por <%= user.nombre %>!</h1>
         <h2><%- htmlMessage %></h2>
     </header>
     <main>
@@ -26,9 +25,8 @@
                         <span>usuarioId: <%= notificacion.usuarioId %></span>
                         <span>mensaje: <%= notificacion.mensaje %></span>
                         <span>mensaje leido: <%= notificacion.leida %></span>
-                        <span><a href="/notificaciones/<%= notificacion.id %>" class="btn-formulario">detalle
-                                de la notificacion</a></span>
-                        <span><a href="/formularioNotificaciones.html" class="btn-formulario">Editar
+                        <a href="/notificaciones/<%= notificacion.id %>" class="btn-formulario">detalle de la notificacion</a>
+                            <a href="formularioNotificaciones.html" class="btn-formulario">Editar
                                 notificacion</a></span>
                     </li>
                     <% }) %>

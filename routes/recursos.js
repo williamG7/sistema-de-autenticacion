@@ -21,7 +21,7 @@ const writeData = (data) => {
 };
 
 routes.get('/',(req, res) =>{
-    const user = {nombre: "william g"}
+    const user = {nombre: "william G"}
     const htmlMessage =  `<a href="http://localhost:3000/">Home</a>`;
     const data = readData()
     res.render("recursos",{user, htmlMessage, data})
