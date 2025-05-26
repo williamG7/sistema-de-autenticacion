@@ -20,10 +20,10 @@
                     <strong>
                         <%=reserva.nombre%>
                     </strong>
-                    <span>usarioId: <%= reserva.usarioId %></span>
+                    <span>usuarioId: <%= reserva.usuarioId  %></span>
                     <span>recursoId: <%= reserva.recursoId %></span>
                     <span>fecha: <%= reserva.fecha %></span>
-                    <span><a href="/reservas.ejs/<%=reserva.id%>"  class="btn-formulario">detalle de la reserva</a>
+                    <span><a href="/reservas/<%=reserva.id%>"  class="btn-formulario">detalle de la reserva</a>
                     <a href="formularioReservas.html" class="btn-formulario">Editar reserva</a></span>
                 </li>
             <%}) %>

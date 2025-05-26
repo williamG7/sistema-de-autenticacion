@@ -31,7 +31,7 @@ export class UserRepository {
             username,
             password: hashedPassword
         }).save()
-
+         return id
     }
     static async login({ username, password }) {
         Validation.username(username)
@@ -45,7 +45,7 @@ export class UserRepository {
 
         if (!isValid) throw new Error('password es invalido')
 
-        const { password: _, ...publicUser } = user
+        const { password:_,...publicUser } = user
 
         return publicUser
     }
@@ -58,7 +58,7 @@ class Validation {
 
     }
     static password(password) {
-        if (typeof password != 'string') throw new Error('rifirg must be a string');
-        if (password.length < 6) throw new Error('password superior a 5 caracteres');
+        if (typeof password != 'string') throw new Error('contraseña tiene que ser un string');
+        if (password.length < 6) throw new Error('contraseña superior a 5 caracteres');
     }
 }

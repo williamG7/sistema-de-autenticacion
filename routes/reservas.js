@@ -28,12 +28,18 @@ routes.get('/',(req, res) =>{
 });
 
 
-routes.get('/:id',(req, res) =>{
-    const data = readData()
-    const user = {nombre: "william G"}
+routes.get('/:id', (req, res) => {
+    const data = readData();
+    const user = { nombre: "william G" };
     const id = parseInt(req.params.id);
-    const reserva = data.reservas.find((reserva) => reserva.id === id)
-    routes.render("reservaDetalle",{user, reserva})
+
+    const reserva = data.reservas.find(reserva => reserva.id === id);
+
+    if (!reserva) {
+        return res.status(404).send("Reserva no encontrada");
+    }
+
+    res.render("reservaDetalle", { user, reserva });
 });
 
 

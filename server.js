@@ -34,7 +34,7 @@ app.use((req, res, next) => {
 // endopints
 app.get('/', (req, res) => {
     const { user } = req.session
-    res.render('home', user);
+    res.render('index', user);
 })
 
 // Endopoint para login
